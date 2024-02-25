@@ -4,18 +4,16 @@ import { Container, Points, Sidebar } from "./styles";
 import avatar from "../../assets/EDUARDO_AVATAR 2.png";
 import abrir from "../../assets/menu/abrir.png";
 import Image from "next/image";
+import { useState } from "react";
+import MinPage from "../MinPage";
+import MaxPage from "../MaxPage";
+import Menu from "../Menu";
 
-interface IModal {
-  setIsOpenAvatar: Function;
-  isOpenAvatar: Boolean;
-  setIsOpenMenu: Function;
-}
+export default function AvatarPage() {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isOpenMenu, setIsOpenMenu] = useState(true);
+  const [isOpenAvatar, setIsOpenAvatar] = useState(true);
 
-export default function AvatarPage({
-  setIsOpenMenu,
-  setIsOpenAvatar,
-  isOpenAvatar,
-}: IModal) {
   return (
     <Container>
       <Sidebar>
@@ -35,6 +33,30 @@ export default function AvatarPage({
           <Image src={abrir} alt="fechar menu" />
         </Points>
       </Sidebar>
+      {isOpenMenu && (
+        <MinPage
+          setIsOpenModal={setIsOpenModal}
+          setIsOpenMenu={setIsOpenMenu}
+          openMenu={isOpenMenu}
+          setIsOpenAvatar={setIsOpenAvatar}
+        />
+      )}
+
+      {isOpenModal && (
+        <MaxPage
+          setIsOpen={setIsOpenModal}
+          setIsOpenAvatar={setIsOpenAvatar}
+          setIsOpenMenu={setIsOpenMenu}
+          openMenu={isOpenMenu}
+        />
+      )}
+      {isOpenAvatar && (
+        <Menu
+          isOpenAvatar={isOpenAvatar}
+          setIsOpenAvatar={setIsOpenAvatar}
+          setIsOpenMenu={setIsOpenMenu}
+        />
+      )}
     </Container>
   );
 }

@@ -75,12 +75,14 @@ import { useEffect } from "react";
 interface IModal {
   setIsOpen: Function;
   setIsOpenMenu: Function;
+  setIsOpenAvatar: Function;
   openMenu: Boolean;
 }
 
 export default function MaxPage({
   setIsOpen,
   setIsOpenMenu,
+  setIsOpenAvatar,
   openMenu,
 }: IModal) {
   useEffect(() => {
@@ -95,7 +97,13 @@ export default function MaxPage({
           <Avatar> </Avatar>
 
           <Image src={avatar} alt="avatar" />
-          <Points onClick={() => setIsOpen(true)}>
+          <Points
+            onClick={() => {
+              setIsOpenAvatar(false);
+              setIsOpenMenu(false);
+              setIsOpen(false);
+            }}
+          >
             <Image src={fecharMenu} alt="fechar menu" />
           </Points>
 
@@ -170,7 +178,8 @@ export default function MaxPage({
               src={fechar}
               onClick={() => {
                 setIsOpen(false);
-                setIsOpenMenu(true);
+                setIsOpenMenu(false);
+                setIsOpenAvatar(true);
               }}
               alt="sair"
             />

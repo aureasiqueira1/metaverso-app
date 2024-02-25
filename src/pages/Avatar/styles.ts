@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  z-index: 3;
+  z-index: 9999;
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -17,6 +17,7 @@ export const Sidebar = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 28vh;
 `;
 
 export const Points = styled.div`
@@ -27,6 +28,7 @@ export const Points = styled.div`
   text-align: center;
   margin-bottom: 15px;
   cursor: pointer;
+
   img {
     justify-content: center;
     align-items: center;

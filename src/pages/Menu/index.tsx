@@ -27,11 +27,17 @@ import { useState } from "react";
 import MinPage from "../MinPage";
 import AvatarPage from "../Avatar";
 
-export default function Menu() {
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const [isOpenMenu, setIsOpenMenu] = useState(true);
-  const [isOpenAvatar, setIsOpenAvatar] = useState(true);
+interface IModal {
+  setIsOpenAvatar: Function;
+  isOpenAvatar: Boolean;
+  setIsOpenMenu: Function;
+}
 
+export default function Menu({
+  setIsOpenMenu,
+  setIsOpenAvatar,
+  isOpenAvatar,
+}: IModal) {
   return (
     <Container>
       <Sidebar>
@@ -47,7 +53,7 @@ export default function Menu() {
         />
         <Points
           onClick={() => {
-            setIsOpenAvatar(true);
+            setIsOpenAvatar(!isOpenAvatar);
           }}
         >
           <Image src={fecharMenu} alt="fechar menu" />
@@ -107,28 +113,6 @@ export default function Menu() {
           </Icon>
         </ImageSquare>
       </Sidebar>
-      {isOpenMenu && (
-        <MinPage
-          setIsOpenModal={setIsOpenModal}
-          setIsOpenMenu={setIsOpenMenu}
-          openMenu={isOpenMenu}
-        />
-      )}
-
-      {isOpenModal && (
-        <MaxPage
-          setIsOpen={setIsOpenModal}
-          setIsOpenMenu={setIsOpenMenu}
-          openMenu={isOpenMenu}
-        />
-      )}
-      {isOpenAvatar && (
-        <AvatarPage
-          isOpenAvatar={isOpenAvatar}
-          setIsOpenAvatar={setIsOpenAvatar}
-          setIsOpenMenu={setIsOpenMenu}
-        />
-      )}
     </Container>
   );
 }

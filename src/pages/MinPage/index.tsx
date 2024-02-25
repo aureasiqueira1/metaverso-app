@@ -75,12 +75,14 @@ import { useEffect, useState } from "react";
 interface IModal {
   setIsOpenModal: Function;
   setIsOpenMenu: Function;
+  setIsOpenAvatar: Function;
   openMenu: Boolean;
 }
 
 export default function MinPage({
   setIsOpenModal,
   setIsOpenMenu,
+  setIsOpenAvatar,
   openMenu,
 }: IModal) {
   useEffect(() => {
@@ -178,7 +180,10 @@ export default function MinPage({
 
             <Image
               src={fechar}
-              onClick={() => setIsOpenMenu(false)}
+              onClick={() => {
+                setIsOpenMenu(false);
+                setIsOpenAvatar(true);
+              }}
               alt="sair"
             />
           </IconMenu>
