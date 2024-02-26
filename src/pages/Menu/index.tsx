@@ -7,7 +7,7 @@ import {
   ImageSquare,
   Points,
   Sidebar,
-} from "./styles";
+} from "../../components/Menu/styles";
 import avatar from "../../assets/EDUARDO_AVATAR 2.png";
 import menu from "../../assets/menu/menu.png";
 import user from "../../assets/menu/user.png";

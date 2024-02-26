@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Points, Sidebar } from "./styles";
+import { Container, Points, Sidebar } from "../../components/Avatar/styles";
 import avatar from "../../assets/EDUARDO_AVATAR 2.png";
 import abrir from "../../assets/menu/abrir.png";
 import Image from "next/image";

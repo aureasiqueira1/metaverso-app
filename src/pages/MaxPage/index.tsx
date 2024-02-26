@@ -35,7 +35,7 @@ import {
   SquareMin3,
   SquareMin4,
   SquareMin5,
-} from "./styles";
+} from "../../components/MaxPage/styles";
 import avatar from "../../assets/EDUARDO_AVATAR 2.png";
 import menu from "../../assets/menu/menu.png";
 import user from "../../assets/menu/user.png";

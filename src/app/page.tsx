@@ -1,9 +1,9 @@
 "use client";
 
 import styles from "./page.module.css";
-import Background from "../pages/Background";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import Background from "../pages/Background";
 import AvatarPage from "../pages/Avatar";
 
 export default function Home() {
