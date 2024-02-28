@@ -2,8 +2,11 @@
  📱 Metaverso App
 </h2>
 
-Esta é uma aplicação Frontend que utiliza Typescript, NextJs e Styled Components.
+<h4 align="center"><a href="https://metaverso-app.vercel.app/">Clique para visitar o projeto</a></h4>
 
+<h4 align="center"><a href="https://www.figma.com/file/PVXTyF7pz45BxeaMX7I4gz/Teste?type=design&node-id=12-354&mode=design&t=E0mM11e9aKh6Jd1y-0">Figma</a></h4>
+
+Esta é uma aplicação Frontend que utiliza Typescript, NextJs e Styled Components.
 
 <div align="center">
   <a href="https://github.com/JosManoel">
